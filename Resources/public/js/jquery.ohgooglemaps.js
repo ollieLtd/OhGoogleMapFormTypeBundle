@@ -3,6 +3,9 @@
 	function GoogleMapType(settings, map_el) {
 
 		var settings = $.extend( {
+              'latitude_input'     : null,
+              'longitude_input'    : null,
+              'update_map_action'  : null,
 			  'search_input_el'    : null,
 			  'search_action_el'   : null,
 			  'search_error_el'    : null,
@@ -15,7 +18,7 @@
 			  'callback'           : function (location, gmap) {},
 			  'error_callback'     : function(status) {
 			  	$this.settings.search_error_el.text(status);
-			  },
+			  }
 			}, settings);
 
 		this.settings = settings;
@@ -58,6 +61,8 @@
 			this.settings.search_action_el.click($.proxy(this.searchAddress, $this));
 			
 			this.settings.current_position_el.click($.proxy(this.currentPosition, $this));
+
+            this.settings.position_action.click($.proxy(this.updateMapLocation, $this));
 		},
 
 		searchAddress : function (e){
@@ -96,6 +101,17 @@
 			}
 			
 		},
+
+        updateMapLocation : function(e){
+            e.preventDefault();
+            var $this = this;
+            var latitude = $this.settings.latitude_input.val();
+            var longitude = $this.settings.longitude_input.val();
+            var clientPosition = new google.maps.LatLng(latitude, longitude);
+            $this.insertMarker(clientPosition);
+            $this.map.setCenter(clientPosition);
+            $this.map.setZoom(16);
+        },
 
 		updateLocation : function (location){
 			this.settings.lat_field.val(location.lat());
@@ -148,6 +164,9 @@
 	};
 	
 	$.fn.ohGoogleMapType.defaultSettings = {
+              'latitude_input'     : null,
+              'longitude_input'    : null,
+              'update_map_action'  : null,
 			  'search_input_el'    : null,
 			  'search_action_el'   : null,
 			  'search_error_el'    : null,

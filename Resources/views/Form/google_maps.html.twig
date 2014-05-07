@@ -11,6 +11,7 @@
 		{% for child in form %}
 		    {{ form_row(child) }}
         {% endfor %}
+        <button id="{{ id }}_update_map" class="btn">Update Map</button>
 	{% endblock %}
 	{% block oh_google_maps_javascripts %}
 		{% if include_jquery %}
@@ -36,11 +37,14 @@
 		<script type="text/javascript">
 
 			$(function(){
-				$('#{{ id }}_map_canvas').ohGoogleMapType({
-				  'search_input_el'    : $('#{{ id }}_input'),
-				  'search_action_el'   : $('#{{ id }}_search_button'),
-				  'search_error_el'    : $('#{{ id }}_error'),
-				  'current_position_el': $('#{{ id }}_current_position'),
+				$('#{{ id }}'+'_map_canvas').ohGoogleMapType({
+                  'latitude_input'     : $("#"+"{{ id }}"+"_{{ lat_name }}"),
+                  'longitude_input'    : $("#"+"{{ id }}"+"_{{ lng_name }}"),
+                  'update_map_action'  : $('#{{ id }}'+'_update_map'),
+				  'search_input_el'    : $('#{{ id }}'+'_input'),
+				  'search_action_el'   : $('#{{ id }}'+'_search_button'),
+				  'search_error_el'    : $('#{{ id }}'+'_error'),
+				  'current_position_el': $('#{{ id }}'+'_current_position'),
 				  'default_lat'        : '{% if value is defined and value.lat %}{{ value.lat }}{% else %}{{ default_lat }}{% endif %}',
 				  'default_lng'        : '{% if value is defined and value.lng %}{{ value.lng }}{% else %}{{ default_lng }}{% endif %}',
 				  'default_zoom'       : {% if value is defined and value.lat and value.lng %}15{% else %}5{% endif %},
