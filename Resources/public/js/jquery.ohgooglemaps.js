@@ -62,7 +62,7 @@
 			
 			this.settings.current_position_el.click($.proxy(this.currentPosition, $this));
 
-            this.settings.position_action.click($.proxy(this.updateMapLocation, $this));
+            this.settings.update_map_action.click($.proxy(this.updateMapLocation, $this));
 		},
 
 		searchAddress : function (e){
