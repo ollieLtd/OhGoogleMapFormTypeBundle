@@ -6,12 +6,14 @@
 
     <parameters>
         <parameter key="form.type.oh_google_maps.class">Oh\GoogleMapFormTypeBundle\Form\Type\GoogleMapType</parameter>
+        <parameter key="type.oh_google_maps.form.options" type="collection" />
     </parameters>
 
     <services>
         <!-- oh_google_maps form type -->
         <service id="form.type.oh_google_maps" class="%form.type.oh_google_maps.class%">
             <tag name="form.type" alias="oh_google_maps" />
+            <argument>%type.oh_google_maps.form.options%</argument>
         </service>
     </services>
 </container>
