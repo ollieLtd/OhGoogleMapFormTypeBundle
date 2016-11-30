@@ -74,7 +74,7 @@ class MyLocation
 }
 ```
 
-**Add form_javascript** this principle is to separate the javascript and html. This allows better integration of web pages. Inspired by its use [DatetimepickerBundle](https://github.com/stephanecollot/DatetimepickerBundle)
+**Add form_javascript** this principle is to separate the javascript and html. This allows better integration of web pages. Inspired by its use in [DatetimepickerBundle](https://github.com/stephanecollot/DatetimepickerBundle)
 
 ### Example:
 
@@ -107,8 +107,8 @@ array(
 	'lng_options' => array(),    // the options for just the lng field
 	'lat_name'       => 'lat',   // the name of the lat field
 	'lng_name'       => 'lng',   // the name of the lng field
-	'map_width'      => '100%',     // the width of the map, you must include units (ie, px or %)
-	'map_height'     => '300px',     // the height of the map, you must include units (ie, px or %)
+	'map_width'      => '100%',  // the width of the map, you must include units (ie, px or %)
+	'map_height'     => '300px', // the height of the map, you must include units (ie, px or %)
 	'default_lat'    => 51.5,    // the starting position on the map
 	'default_lng'    => -0.1245, // the starting position on the map
 	'include_jquery' => false,   // jquery needs to be included above the field (ie not at the bottom of the page)
