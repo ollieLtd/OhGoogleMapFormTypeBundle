@@ -101,19 +101,19 @@ There are a number of options, mostly self-explanatory
 
 ``` php
 array(
-	'type'           => 'text',  // the types to render the lat and lng fields as
-	'options'        => array(), // the options for both the fields
-	'lat_options'  => array(),   // the options for just the lat field
-	'lng_options' => array(),    // the options for just the lng field
-	'lat_name'       => 'lat',   // the name of the lat field
-	'lng_name'       => 'lng',   // the name of the lng field
-	'map_width'      => '100%',  // the width of the map, you must include units (ie, px or %)
-	'map_height'     => '300px', // the height of the map, you must include units (ie, px or %)
-	'default_lat'    => 51.5,    // the starting position on the map
-	'default_lng'    => -0.1245, // the starting position on the map
-	'include_jquery' => false,   // jquery needs to be included above the field (ie not at the bottom of the page)
-	'include_gmaps_js'=>true,    // is this the best place to include the google maps javascript?
-	'js_inside_html' => false    // if you don't have the possibility to include form_javascript(), ie, in Sonata Admin Class, set true this option
+	'type'              => 'text',  // the types to render the lat and lng fields as
+	'options'           => array(), // the options for both the fields
+	'lat_options'       => array(), // the options for just the lat field
+	'lng_options'       => array(), // the options for just the lng field
+	'lat_name'          => 'lat',   // the name of the lat field
+	'lng_name'          => 'lng',   // the name of the lng field
+	'map_width'         => '100%',  // the width of the map, you must include units (ie, px or %)
+	'map_height'        => '300px', // the height of the map, you must include units (ie, px or %)
+	'default_lat'       => 51.5,    // the starting position on the map
+	'default_lng'       => -0.1245, // the starting position on the map
+	'include_jquery'    => false,   // jquery needs to be included above the field (ie not at the bottom of the page)
+	'include_gmaps_js'  => true,    // is this the best place to include the google maps javascript?
+	'js_inside_html'    => false    // if you don't have the possibility to include form_javascript(), ie, in Sonata Admin Class, set true this option
 )
 ```
 	
