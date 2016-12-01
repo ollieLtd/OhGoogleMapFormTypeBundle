@@ -40,6 +40,13 @@
                 'lng_field': $('#{{ attribute(form, lng_name).vars.id }}'),
                 'callback': oh_google_maps_callback
             });
+                    
+            $('#{{ id }}_input').keypress(function (e) {
+                if (e.which === 13){
+                    $('#{{ id }}_search_button').trigger('click');
+                    e.preventDefault();
+                }
+            });
         });
 
     </script>
