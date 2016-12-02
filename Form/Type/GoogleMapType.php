@@ -60,6 +60,7 @@ class GoogleMapType extends AbstractType
             $view->vars['default_lng'] = $options['default_lng']; 
             $view->vars['include_jquery'] = $options['include_jquery']; 
             $view->vars['include_gmaps_js'] = $options['include_gmaps_js'];
+            $view->vars['js_inside_html'] = $options['js_inside_html'];
     }
 
     public function getParent()
