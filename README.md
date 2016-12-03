@@ -34,6 +34,14 @@ Add OhGoogleMapFormTypeBundle to assetic
 assetic:
     bundles:        [ 'OhGoogleMapFormTypeBundle' ]
 ```
+You might config your Google Maps Api Key.
+
+```yaml
+# app/config/config.yml
+oh_google_map_form_type:
+    api_key: "my-key"
+```
+
 After this, you have to install assets:
 
     php app/console assets:install --symlink
