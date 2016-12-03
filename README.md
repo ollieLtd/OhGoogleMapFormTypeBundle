@@ -34,7 +34,7 @@ Add OhGoogleMapFormTypeBundle to assetic
 assetic:
     bundles:        [ 'OhGoogleMapFormTypeBundle' ]
 ```
-You might config your Google Maps Api Key.
+You might config your [Google Maps Api Key](https://developers.google.com/maps/documentation/javascript/get-api-key). 
 
 ```yaml
 # app/config/config.yml
