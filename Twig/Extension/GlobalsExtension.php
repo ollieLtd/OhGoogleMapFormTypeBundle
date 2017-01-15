@@ -3,33 +3,31 @@
 namespace Oh\GoogleMapFormTypeBundle\Twig\Extension;
 
 /**
- * Description of GlobalsExtension.
- * 
- * aqui defino todas las variables globales para poder recoger en cualquier 
- * plantilla twig del bundle
+ * Expose GoogleMaps Api Key globally so it can be accessed anywhere in Twig.
  *
  * @author Juanjo García <juanjogarcia@editartgroup.com>
  */
-
-class GlobalsExtension extends \Twig_Extension {
+class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
+{
+    private $apiKey;
 
     /**
-     * 
      * @param string $apiKey
      */
-    public function __construct($apiKey) {
+    public function __construct($apiKey)
+    {
         $this->apiKey = $apiKey;
     }
 
-    public function getGlobals() {
-
+    public function getGlobals()
+    {
         return array(
-            'apiKey' => $this->apiKey
+            'apiKey' => $this->apiKey,
         );
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'oh.twig.extension.globals';
     }
-
 }
