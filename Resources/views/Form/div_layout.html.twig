@@ -1,0 +1,20 @@
+{% block oh_google_maps_widget %}
+    <div {{ block('widget_container_attributes') }}>
+        {% block oh_google_maps_html %} 
+            <div id="{{ id }}_container">
+                <input type="text" id="{{ id }}_input" /><button id="{{ id }}_search_button" class="btn">Search</button><br /><a href="#" id="{{ id }}_current_position">Current location</a>
+                <div id="{{ id }}_map_canvas" class="gmap" style="width: {{ map_width }}; height: {{ map_height }}"></div>
+                <div id="{{ id }}_error"></div>
+            </div>
+        {% endblock %}
+        {% block oh_google_maps_fields %} 
+            {% for child in form %}
+                {{ form_row(child) }}
+            {% endfor %}
+        {% endblock %}
+    </div>
+
+    {% if js_inside_html %}
+        {% include "OhGoogleMapFormTypeBundle:Form:jquery_layout.html.twig" %}
+    {% endif %}
+{% endblock %}
